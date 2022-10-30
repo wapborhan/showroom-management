@@ -4,7 +4,8 @@ import Sidebar from "./components/Sidebar";
 // import Footer from "./components/Footer";
 import { FaBars, FaUserCircle, FaAlignLeft } from "react-icons/fa";
 
-import { BrowserRouter } from "react-router-dom";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+import Pages from "./pages/Pages";
 
 function App() {
   const [isActive, setActive] = useState("false");
@@ -49,8 +50,16 @@ function App() {
                 </a>
               </div>
             </nav>
-            {/* <MainComponents /> */}
-            <h1>test</h1>
+            <Routes>
+              <Route path="/" exact element={<Pages />} />
+              <Route path="/overview/users" exact element={<Pages />} />
+              <Route path="/overview/revenue" exact element={<Pages />} />
+              <Route path="/reports" exact element={<Pages />} />
+              <Route path="/reports/reports1" exact element={<Pages />} />
+              <Route path="/reports/reports2" exact element={<Pages />} />
+              <Route path="/reports/reports3" exact element={<Pages />} />
+              <Route path="/team" exact element={<Pages />} />
+            </Routes>
           </div>
           {/* <Footer /> */}
         </div>
